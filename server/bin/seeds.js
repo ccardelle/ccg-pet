@@ -58,7 +58,94 @@ require('../configs/database')
 
 let pets = [
   {
-    name: 'alice',
+    name: 'Alice',
+    type: 'Dog',
+    breed: 'Huskie',
+    gender: 'Female',
+  },
+  {
+    name: 'Bob',
+    type: 'Dog',
+    breed: 'German Shephard',
+    gender: 'Male',
+  },
+  {
+    name: 'John',
+    type: 'Dog',
+    breed: 'Saint Bernard',
+    gender: 'Male',
+  },
+  {
+    name: 'Leslie',
+    type: 'Dog',
+    breed: 'Poodle',
+    gender: 'Female',
+  },
+  {
+    name: 'Jen',
+    type: 'Dog',
+    breed: 'Corgi',
+    gender: 'Female',
+  },
+  {
+    name: 'Buster',
+    type: 'Dog',
+    breed: 'Golden Retriever',
+    gender: 'Male',
+  },
+  {
+    name: 'Lady',
+    type: 'Dog',
+    breed: 'Italian Greyhound',
+    gender: 'Female',
+  },
+  {
+    name: 'Papo',
+    type: 'Dog',
+    breed: 'Dalmation',
+    gender: 'Male',
+  },
+  {
+    name: 'Jack',
+    type: 'Dog',
+    breed: 'Jack Russell',
+    gender: 'Male',
+  },
+  {
+    name: 'Harriet',
+    type: 'Dog',
+    breed: 'Maltesse',
+    gender: 'Female',
+  },
+  {
+    name: 'Dingo',
+    type: 'Dog',
+    breed: 'Poodle',
+    gender: 'Male',
+  },
+  {
+    name: 'Scooby',
+    type: 'Dog',
+    breed: 'Great Dane',
+    gender: 'Male',
+  },
+  {
+    name: 'Jacob',
+    type: 'Dog',
+    breed: 'Huskie',
+    gender: 'Male',
+  },
+  {
+    name: 'Kiki',
+    type: 'Dog',
+    breed: 'Mix',
+    gender: 'Female',
+  },
+  {
+    name: 'Juanito',
+    type: 'Dog',
+    breed: 'Corgi',
+    gender: 'Male',
   },
 ]
 
