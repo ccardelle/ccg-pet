@@ -1,6 +1,6 @@
 // --------------------
 // Definition of variables
-$primary: #32c3ff;
+$primary: #faab00;
 
 // ----------------------------------------
 // To install Boostrap:
@@ -98,21 +98,38 @@ body {
   }
 }
 
-.pet-container {
-  display: flex;
-  flex-direction: row;
-  width: 33%;
-  .pet-card {
+.pet-page {
+  .pet-filters {
+    padding: 5vh;
+    margin: 2vh 10vh;
+
+    .filter-label {
+      padding: 0 10px 0 10px;
+    }
+    .filter {
+      padding: 0;
+    }
+  }
+  .pet-container {
     display: flex;
     justify-content: center;
+    flex-direction: row;
     flex-wrap: wrap;
-    max-width: 20vh;
-    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.4);
-    transition: 0.3s;
-    border-radius: 5px;
-  }
-  .pet-img {
-    max-width: 10vh;
-    border-radius: 5px 5px 0 0;
+    margin: 2vh 10vh;
+    .pet-card {
+      // display: flex;
+      // justify-content: center;
+      // flex-wrap: wrap;
+      margin: 1vh 2vh;
+      max-width: 20vh;
+      box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.4);
+      transition: 0.3s;
+      border-radius: 5px;
+    }
+    .pet-img {
+      max-width: 10vh;
+      border-radius: 5px 5px 0 0;
+      box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 1);
+    }
   }
 }
