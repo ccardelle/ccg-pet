@@ -29,6 +29,81 @@ export default class AvailablePets extends Component {
     this.setState({ petGender: event.target.value })
   }
 
+  showPets() {
+    let filteredArray = []
+    this.state.availablePets.forEach(p => {
+      if (
+        p.gender.includes(this.state.petGender) ||
+        this.state.petGender === 'All'
+      ) {
+        if (
+          p.breed.includes(this.state.petBreed) ||
+          this.state.petBreed === 'All'
+        ) {
+          if (
+            p.type.includes(this.state.petType) ||
+            this.state.petType === 'All'
+          ) {
+            filteredArray.push(p)
+          }
+        }
+      }
+    })
+    console.log(`FILTERED ${filteredArray} ${filteredArray.length}`)
+    // this.setState({ filteredPets: filteredArray })
+    return (
+      <div className="pet-container">
+        {filteredArray.map(p => (
+          <div key={p._id} className="pet-card">
+            <img className="pet-img" src={p.imgUrl} alt="" />
+            <h1>{p.name}</h1>
+            <hr />
+            <ul>
+              <li>Type: {p.type}</li> <li>Gender: {p.gender}</li>{' '}
+              <li>Breed: {p.breed}</li>
+            </ul>
+          </div>
+        ))}
+      </div>
+    )
+    // if (
+    //   this.state.petType === 'All' &&
+    //   this.state.petBreed === 'All' &&
+    //   this.state.petGender === 'All'
+    // ) {
+    //   return (
+    //     <div className="pet-container">
+    //       {this.state.availablePets.map(p => (
+    //         <div key={p._id} className="pet-card">
+    //           <img className="pet-img" src={p.imgUrl} alt="" />
+    //           <h1>{p.name}</h1>
+    //           <hr />
+    //           <ul>
+    //             <li>Type: {p.type}</li> <li>Gender: {p.gender}</li>{' '}
+    //             <li>Breed: {p.breed}</li>
+    //           </ul>
+    //         </div>
+    //       ))}
+    //     </div>
+    //   )
+    // } else {
+    //   return (
+    //     <div className="pet-container">
+    //       {this.state.filteredPets.map(p => (
+    //         <div key={p._id} className="pet-card">
+    //           <img className="pet-img" src={p.imgUrl} alt="" />
+    //           <h1>{p.name}</h1>
+    //           <hr />
+    //           <ul>
+    //             <li>Type: {p.type}</li> <li>Gender: {p.gender}</li>{' '}
+    //             <li>Breed: {p.breed}</li>
+    //           </ul>
+    //         </div>
+    //       ))}
+    //     </div>
+    //   )
+    // }
+  }
   render() {
     return (
       <div className="pet-page">
@@ -83,7 +158,7 @@ export default class AvailablePets extends Component {
           </select>
         </div>
         {/* Displays available pets (based on filters) */}
-        <div className="pet-container">
+        {/* <div className="pet-container">
           {this.state.availablePets.map(p => (
             <div key={p._id} className="pet-card">
               <img className="pet-img" src={p.imgUrl} alt="" />
@@ -95,7 +170,8 @@ export default class AvailablePets extends Component {
               </ul>
             </div>
           ))}
-        </div>
+        </div> */}
+        {this.showPets()}
       </div>
     )
   }
