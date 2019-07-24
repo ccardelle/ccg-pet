@@ -68,7 +68,7 @@ export default class AvailablePets extends Component {
       )
     } else {
       return (
-        <div>
+        <div className="pet-container">
           {' '}
           <h1> NO AVAILABLE PETS MATCH YOUR CRITERIA - RESET FILTERS</h1>
         </div>
@@ -78,7 +78,13 @@ export default class AvailablePets extends Component {
   render() {
     return (
       <div className="pet-page">
-        <h2>List of Available Pets</h2>
+        <div>
+          <img
+            className="pet-header-img"
+            src="https://ccgpets.s3.us-east-2.amazonaws.com/dogpic.jpg"
+            alt=""
+          />
+        </div>
 
         {/* Filter options */}
 
@@ -128,6 +134,7 @@ export default class AvailablePets extends Component {
             <option value="Female">Female</option>
           </select>
         </div>
+        <h2 className="available-pets-title">List of Available Pets</h2>
         {this.showPets()}
       </div>
     )
