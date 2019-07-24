@@ -6,9 +6,7 @@ import AvailablePets from './pages/AvailablePets'
 export default class App extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      countries: [],
-    }
+    this.state = {}
   }
 
   handleLogoutClick(e) {

@@ -1,15 +1,8 @@
 const path = require('path')
 require('dotenv').config({ path: path.join(__dirname, '.env') })
-
-const bodyParser = require('body-parser')
 const cors = require('cors')
-const cookieParser = require('cookie-parser')
 const express = require('express')
-const mongoose = require('mongoose')
-const logger = require('morgan')
 const nocache = require('nocache')
-const session = require('express-session')
-const MongoStore = require('connect-mongo')(session)
 
 require('./configs/database')
 
@@ -32,28 +25,10 @@ app.use(
     credentials: true,
   })
 )
-app.use(logger('dev'))
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(cookieParser())
 
 // Set the public folder to "~/client/build/"
 // Example: http://localhost:5000/favicon.ico => Display "~/client/build/favicon.ico"
 app.use(express.static(path.join(__dirname, '../client/build')))
-
-// Enable authentication using session + passport
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET || 'irongenerator',
-    resave: true,
-    saveUninitialized: true,
-    store: new MongoStore({ mongooseConnection: mongoose.connection }),
-  })
-)
-require('./passport')(app)
-
-app.use('/api', require('./routes/index'))
-app.use('/api', require('./routes/auth'))
 
 // Links pet routes
 app.use('/api/availablePets', require('./routes/availablePets'))
