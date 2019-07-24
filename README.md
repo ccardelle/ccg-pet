@@ -8,6 +8,7 @@
 
 > Very basic front-end display for fetched API data. Backend is Node with Express, Mongo as the database. using React for the front end. No style libraries were used.
 > Seeded the database manually to simulate fetching from an API.
+>It was important that I minimize API calls. Initial page load pulls the API data and then all filtering is done on it locally.
 
 ## Things I Would Have Changed (given more time)
 
