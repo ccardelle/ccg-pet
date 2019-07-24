@@ -97,3 +97,22 @@ body {
     color: $primary;
   }
 }
+
+.pet-container {
+  display: flex;
+  flex-direction: row;
+  width: 33%;
+  .pet-card {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 20vh;
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.4);
+    transition: 0.3s;
+    border-radius: 5px;
+  }
+  .pet-img {
+    max-width: 10vh;
+    border-radius: 5px 5px 0 0;
+  }
+}

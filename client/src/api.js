@@ -65,9 +65,16 @@ export default {
 
   // This is an example on how to use this method in a different file
   // api.getCountries().then(countries => { /* ... */ })
-  getCountries() {
+  // getCountries() {
+  //   return service
+  //     .get('/countries')
+  //     .then(res => res.data)
+  //     .catch(errHandler)
+  // },
+
+  getAvailablePets() {
     return service
-      .get('/countries')
+      .get('/availablePets')
       .then(res => res.data)
       .catch(errHandler)
   },
