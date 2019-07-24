@@ -30,6 +30,7 @@ export default class AvailablePets extends Component {
   }
 
   showPets() {
+    // Filters through original array from API and displays only matching criteria
     let filteredArray = []
     this.state.availablePets.forEach(p => {
       if (
@@ -49,60 +50,30 @@ export default class AvailablePets extends Component {
         }
       }
     })
-    console.log(`FILTERED ${filteredArray} ${filteredArray.length}`)
-    // this.setState({ filteredPets: filteredArray })
-    return (
-      <div className="pet-container">
-        {filteredArray.map(p => (
-          <div key={p._id} className="pet-card">
-            <img className="pet-img" src={p.imgUrl} alt="" />
-            <h1>{p.name}</h1>
-            <hr />
-            <ul>
-              <li>Type: {p.type}</li> <li>Gender: {p.gender}</li>{' '}
-              <li>Breed: {p.breed}</li>
-            </ul>
-          </div>
-        ))}
-      </div>
-    )
-    // if (
-    //   this.state.petType === 'All' &&
-    //   this.state.petBreed === 'All' &&
-    //   this.state.petGender === 'All'
-    // ) {
-    //   return (
-    //     <div className="pet-container">
-    //       {this.state.availablePets.map(p => (
-    //         <div key={p._id} className="pet-card">
-    //           <img className="pet-img" src={p.imgUrl} alt="" />
-    //           <h1>{p.name}</h1>
-    //           <hr />
-    //           <ul>
-    //             <li>Type: {p.type}</li> <li>Gender: {p.gender}</li>{' '}
-    //             <li>Breed: {p.breed}</li>
-    //           </ul>
-    //         </div>
-    //       ))}
-    //     </div>
-    //   )
-    // } else {
-    //   return (
-    //     <div className="pet-container">
-    //       {this.state.filteredPets.map(p => (
-    //         <div key={p._id} className="pet-card">
-    //           <img className="pet-img" src={p.imgUrl} alt="" />
-    //           <h1>{p.name}</h1>
-    //           <hr />
-    //           <ul>
-    //             <li>Type: {p.type}</li> <li>Gender: {p.gender}</li>{' '}
-    //             <li>Breed: {p.breed}</li>
-    //           </ul>
-    //         </div>
-    //       ))}
-    //     </div>
-    //   )
-    // }
+    if (filteredArray.length > 0) {
+      return (
+        <div className="pet-container">
+          {filteredArray.map(p => (
+            <div key={p._id} className="pet-card">
+              <img className="pet-img" src={p.imgUrl} alt="" />
+              <h1>{p.name}</h1>
+              <hr />
+              <ul>
+                <li>Type: {p.type}</li> <li>Gender: {p.gender}</li>{' '}
+                <li>Breed: {p.breed}</li>
+              </ul>
+            </div>
+          ))}
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          {' '}
+          <h1> NO AVAILABLE PETS MATCH YOUR CRITERIA - RESET FILTERS</h1>
+        </div>
+      )
+    }
   }
   render() {
     return (
@@ -157,26 +128,13 @@ export default class AvailablePets extends Component {
             <option value="Female">Female</option>
           </select>
         </div>
-        {/* Displays available pets (based on filters) */}
-        {/* <div className="pet-container">
-          {this.state.availablePets.map(p => (
-            <div key={p._id} className="pet-card">
-              <img className="pet-img" src={p.imgUrl} alt="" />
-              <h1>{p.name}</h1>
-              <hr />
-              <ul>
-                <li>Type: {p.type}</li> <li>Gender: {p.gender}</li>{' '}
-                <li>Breed: {p.breed}</li>
-              </ul>
-            </div>
-          ))}
-        </div> */}
         {this.showPets()}
       </div>
     )
   }
 
   componentDidMount() {
+    // Calls API and retrieves pet data on page load.
     api
       .getAvailablePets()
       .then(pets => {
