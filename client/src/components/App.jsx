@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 // import { Route, Link, NavLink, Switch } from 'react-router-dom'
-import Home from './pages/Home'
-import Countries from './pages/Countries'
-import AddCountry from './pages/AddCountry'
-import Secret from './pages/Secret'
-import Login from './pages/Login'
-import Signup from './pages/Signup'
+// import Home from './pages/Home'
+// import Countries from './pages/Countries'
+// import AddCountry from './pages/AddCountry'
+// import Secret from './pages/Secret'
+// import Login from './pages/Login'
+// import Signup from './pages/Signup'
 import api from '../api'
 import AvailablePets from './pages/AvailablePets'
 
@@ -42,13 +42,13 @@ export default class App extends Component {
           <NavLink to="/secret">Secret</NavLink> */}
         </header>
         <Switch>
-          <Route path="/" exact component={Home} />
+          <Route path="/" component={AvailablePets} />
+          {/* <Route path="/" exact component={Home} />
           <Route path="/countries" component={Countries} />
-          <Route path="/availablePets" component={AvailablePets} />
           <Route path="/add-country" component={AddCountry} />
           <Route path="/signup" component={Signup} />
           <Route path="/login" component={Login} />
-          <Route path="/secret" component={Secret} />
+          <Route path="/secret" component={Secret} /> */}
           <Route render={() => <h2>404</h2>} />
         </Switch>
       </div>

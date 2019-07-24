@@ -33,6 +33,9 @@ export default class AvailablePets extends Component {
     return (
       <div className="pet-page">
         <h2>List of Available Pets</h2>
+
+        {/* Filter options */}
+
         <div className="pet-filters">
           <span className="filter-label">Pet Type: </span>
           <select
@@ -79,13 +82,17 @@ export default class AvailablePets extends Component {
             <option value="Female">Female</option>
           </select>
         </div>
+        {/* Displays available pets (based on filters) */}
         <div className="pet-container">
           {this.state.availablePets.map(p => (
             <div key={p._id} className="pet-card">
               <img className="pet-img" src={p.imgUrl} alt="" />
               <h1>{p.name}</h1>
               <hr />
-              Type: {p.type} Gender: {p.gender} Breed: {p.breed}
+              <ul>
+                <li>Type: {p.type}</li> <li>Gender: {p.gender}</li>{' '}
+                <li>Breed: {p.breed}</li>
+              </ul>
             </div>
           ))}
         </div>

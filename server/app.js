@@ -54,7 +54,8 @@ require('./passport')(app)
 
 app.use('/api', require('./routes/index'))
 app.use('/api', require('./routes/auth'))
-// app.use('/api/countries', require('./routes/countries'))
+
+// Links pet routes
 app.use('/api/availablePets', require('./routes/availablePets'))
 
 // For any routes that starts with "/api", catch 404 and forward to error handler
