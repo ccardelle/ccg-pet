@@ -100,14 +100,21 @@ body {
 
 .pet-page {
   .pet-filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     padding: 5vh;
-    margin: 2vh 10vh;
+    margin: 8vh 15vh;
 
     .filter-label {
+      margin-top: 2vh;
       padding: 0 10px 0 10px;
     }
     .filter {
+      margin-top: 2vh;
       padding: 0;
+      border-radius: 5px;
     }
   }
   .pet-container {
@@ -115,19 +122,21 @@ body {
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
+
     margin: 2vh 10vh;
     .pet-card {
       // display: flex;
       // justify-content: center;
       // flex-wrap: wrap;
       margin: 1vh 2vh;
+      padding: 5px 5px;
       max-width: 20vh;
       box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.4);
       transition: 0.3s;
       border-radius: 5px;
     }
     .pet-img {
-      max-width: 10vh;
+      max-width: 15vh;
       border-radius: 5px 5px 0 0;
       box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 1);
     }

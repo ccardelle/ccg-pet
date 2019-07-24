@@ -6,6 +6,7 @@ export default class AvailablePets extends Component {
     super(props)
     this.state = {
       availablePets: [],
+      filteredPets: [],
     }
   }
   render() {
