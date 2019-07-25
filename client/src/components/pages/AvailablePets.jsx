@@ -96,6 +96,11 @@ export default class AvailablePets extends Component {
         {/* Filter options */}
 
         <div className="pet-filters">
+          <img
+            className="filter-icon"
+            src="https://ccgpets.s3.us-east-2.amazonaws.com/filtericon.svg"
+            alt=""
+          />
           FILTERS : <span className="filter-label">Pet Type: </span>
           <select
             className="filter"

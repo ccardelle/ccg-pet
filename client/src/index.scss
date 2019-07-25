@@ -41,7 +41,15 @@ body {
       padding: 1vh 0vh 2vh 0vh;
       // margin: 0vh 8vh;
       border-radius: 10px 10px 0px 0px;
+      .filter-icon {
+        display: inline-block;
+        width: 2vh;
+        padding-right: 10px;
+        padding-bottom: 5px;
+        vertical-align: middle;
 
+        text-align: start;
+      }
       .filter-label {
         margin-top: 2vh;
         padding: 0 10px 0 10px;
@@ -70,9 +78,10 @@ body {
       .pet-card {
         margin: 1vh 2vh;
         padding: 5px 5px;
-        width: 20vh;
+        width: 25vh;
         max-width: 25vh;
-        max-height: 30vh !important;
+        height: 40vh;
+        max-height: 45vh !important;
         box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.4);
         transition: 0.3s;
         border-radius: 5px;
