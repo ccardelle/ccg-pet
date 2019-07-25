@@ -58,9 +58,16 @@ export default class AvailablePets extends Component {
               <img className="pet-img" src={p.imgUrl} alt="" />
               <h1>{p.name}</h1>
               <hr />
-              <ul>
-                <li>Type: {p.type}</li> <li>Gender: {p.gender}</li>{' '}
-                <li>Breed: {p.breed}</li>
+              <ul className="pet-details-list">
+                <li className="pet-details-list-item">
+                  <span className="text-bold">Type: </span> {p.type}
+                </li>{' '}
+                <li className="pet-details-list-item">
+                  <span className="text-bold">Gender:</span> {p.gender}
+                </li>
+                <li className="pet-details-list-item">
+                  <span className="text-bold">Breed:</span> {p.breed}
+                </li>
               </ul>
             </div>
           ))}
@@ -89,7 +96,7 @@ export default class AvailablePets extends Component {
         {/* Filter options */}
 
         <div className="pet-filters">
-          <span className="filter-label">Pet Type: </span>
+          FILTERS : <span className="filter-label">Pet Type: </span>
           <select
             className="filter"
             name="select-type"
@@ -100,9 +107,7 @@ export default class AvailablePets extends Component {
             <option value="Dog">Dog</option>
             <option value="Cat">Cat</option>
           </select>
-
           <span className="filter-label">Pet Breed: </span>
-
           <select
             className="filter"
             name="select-breed"

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, NavLink } from 'react-router-dom'
 import api from '../api'
 import AvailablePets from './pages/AvailablePets'
 
@@ -18,6 +18,9 @@ export default class App extends Component {
       <div className="App">
         <header className="App-header">
           <h2 className="App-title">PetWorld</h2>
+          {/* <div className="header-links">
+            <NavLink>TEST</NavLink>
+          </div> */}
         </header>
         <Switch>
           <Route path="/" component={AvailablePets} />
